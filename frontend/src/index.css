@@ -8,12 +8,12 @@ body {
 }
 
 header {
-  background-color: #404040;
+  background-color: #019267;
   padding: 1rem;
 }
 
 header a {
-  color: #ffffff;
+  color: #ffd93d;
   font-weight: bold;
   text-decoration: none;
 }

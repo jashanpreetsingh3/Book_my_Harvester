@@ -7,7 +7,7 @@ function App() {
         <a href="/">Book my Harvester</a>
       </header>
       <main>
-        <h1>Harvesters for rent</h1>
+        <h1>Featured Harvesters</h1>
         <div className="products">
           {data.products.map((product) => (
             <div className="product">
