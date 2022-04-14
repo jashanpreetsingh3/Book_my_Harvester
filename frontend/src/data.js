@@ -1,5 +1,5 @@
 const data = {
-  products: [
+  product: [
     {
       name: 'Shaktiman Paddy Master 3776',
       slug: 'harvester1',
@@ -7,6 +7,7 @@ const data = {
       image: '/images/p1.jpg',
       price: '1300 per hour',
       rating: 4.5,
+      numReviews: 17,
       description: 'Reliable combine for rent',
     },
     {
@@ -16,6 +17,7 @@ const data = {
       image: '/images/p2.jpg',
       price: '2500 per hour',
       rating: 4,
+      numReviews: 12,
       description: 'Reliable combine for rent',
     },
     {
@@ -25,6 +27,7 @@ const data = {
       image: '/images/p3.jpg',
       price: '2000 per hour',
       rating: 4,
+      numReviews: 7,
       description: 'Reliable combine for rent',
     },
     {
@@ -34,6 +37,7 @@ const data = {
       image: '/images/p4.jpg',
       price: '1700 per hour',
       rating: 4,
+      numReviews: 25,
       description: 'Reliable combine for rent',
     },
   ],
