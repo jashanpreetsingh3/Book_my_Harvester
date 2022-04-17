@@ -11,7 +11,7 @@ import { Store } from './Store';
 
 function App() {
   const { state } = useContext(Store);
-  const { bookings } = state;
+  const { cart } = state;
   return (
     <BrowserRouter>
       <div className="d-flex flex-column site-container">
@@ -22,11 +22,11 @@ function App() {
                 <Navbar.Brand>Book my Harvester</Navbar.Brand>
               </LinkContainer>
               <Nav className="me-auto">
-                <Link to="/bookings" className="nav-link">
-                  Bookings
-                  {bookings.bookedItems.length > 0 && (
+                <Link to="/cart" className="nav-link">
+                  Cart
+                  {cart.cartItems.length > 0 && (
                     <Badge pill bg="danger">
-                      {bookings.bookedItems.reduce((a, c) => a + c.quantity, 0)}
+                      {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
                     </Badge>
                   )}
                 </Link>

@@ -15,7 +15,7 @@ function Product(props) {
           <Card.Title>{product.name}</Card.Title>
         </Link>
         <Rating rating={product.rating} />
-        <Card.Text>₹{product.price}</Card.Text>
+        <Card.Text>₹{product.price} / hr</Card.Text>
         <Button>Book now</Button>
       </Card.Body>
     </Card>

@@ -3,25 +3,25 @@ import { createContext, useReducer } from 'react';
 export const Store = createContext();
 
 const initialState = {
-  bookings: {
-    bookedItems: [],
+  cart: {
+    cartItems: [],
   },
 };
 
 function reducer(state, action) {
   switch (action.type) {
-    case 'BOOKING_ADDED':
+    case 'CART_ADD_ITEM':
       // add booking
       const newItem = action.payload;
-      const existItem = state.bookings.bookedItems.find(
+      const existItem = state.cart.cartItems.find(
         (item) => item._id === newItem._id
       );
-      const bookedItems = existItem
-        ? state.bookings.bookedItems.map((item) =>
+      const cartItems = existItem
+        ? state.cart.cartItems.map((item) =>
             item._id === existItem._id ? newItem : item
           )
-        : [...state.bookings.bookedItems, newItem];
-      return { ...state, bookings: { ...state.bookings, bookedItems } };
+        : [...state.cart.cartItems, newItem];
+      return { ...state, cart: { ...state.cart, cartItems } };
     default:
       return state;
   }

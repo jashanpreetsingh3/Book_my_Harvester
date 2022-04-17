@@ -50,9 +50,9 @@ function ProductScreen() {
   }, [slug]);
 
   const { state, dispatch: ctxDispatch } = useContext(Store);
-  const { bookings } = state;
+  const { cart } = state;
   const bookNowHandler = async () => {
-    const existItem = bookings.bookedItems.find((x) => x._id === product._id);
+    const existItem = cart.cartItems.find((x) => x._id === product._id);
     const quantity = existItem ? existItem.quantity + 1 : 1;
     const { data } = await axios.get(`/api/products/${product._id}`);
     if (data.availability < quantity) {
@@ -60,7 +60,7 @@ function ProductScreen() {
       return;
     }
     ctxDispatch({
-      type: 'BOOKING_ADDED',
+      type: 'CART_ADD_ITEM',
       payload: { ...product, quantity },
     });
   };
@@ -105,7 +105,7 @@ function ProductScreen() {
                 <ListGroup.Item>
                   <Row>
                     <Col>Price:</Col>
-                    <Col>₹{product.price}</Col>
+                    <Col>₹{product.price} / hr</Col>
                   </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>
