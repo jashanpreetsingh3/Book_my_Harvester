@@ -56,7 +56,7 @@ function ProductScreen() {
     const quantity = existItem ? existItem.quantity + 1 : 1;
     const { data } = await axios.get(`/api/products/${product._id}`);
     if (data.availability < quantity) {
-      window.alert('Sorry. Machine is out of stock');
+      alert('Sorry. Product is not available.');
       return;
     }
     ctxDispatch({
@@ -84,6 +84,9 @@ function ProductScreen() {
               <Helmet>
                 <title>{product.name}</title>
               </Helmet>
+            </ListGroup.Item>
+            <ListGroup.Item>
+              <h1>{product.name}</h1>
             </ListGroup.Item>
             <ListGroup.Item>
               <Rating
