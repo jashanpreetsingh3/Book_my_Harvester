@@ -12,13 +12,16 @@ function reducer(state, action) {
   switch (action.type) {
     case 'BOOKING_ADDED':
       // add booking
-      return {
-        ...state,
-        bookings: {
-          ...state.bookings,
-          bookedItems: [...state.bookings.bookedItems, action.payload],
-        },
-      };
+      const newItem = action.payload;
+      const existItem = state.bookings.bookedItems.find(
+        (item) => item._id === newItem._id
+      );
+      const bookedItems = existItem
+        ? state.bookings.bookedItems.map((item) =>
+            item._id === existItem._id ? newItem : item
+          )
+        : [...state.bookings.bookedItems, newItem];
+      return { ...state, bookings: { ...state.bookings, bookedItems } };
     default:
       return state;
   }

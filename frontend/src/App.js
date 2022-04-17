@@ -26,7 +26,7 @@ function App() {
                   Bookings
                   {bookings.bookedItems.length > 0 && (
                     <Badge pill bg="danger">
-                      {bookings.bookedItems.length}
+                      {bookings.bookedItems.reduce((a, c) => a + c.quantity, 0)}
                     </Badge>
                   )}
                 </Link>

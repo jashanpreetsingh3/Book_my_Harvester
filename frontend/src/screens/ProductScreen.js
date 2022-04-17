@@ -50,10 +50,18 @@ function ProductScreen() {
   }, [slug]);
 
   const { state, dispatch: ctxDispatch } = useContext(Store);
-  const bookNowHandler = () => {
+  const { bookings } = state;
+  const bookNowHandler = async () => {
+    const existItem = bookings.bookedItems.find((x) => x._id === product._id);
+    const quantity = existItem ? existItem.quantity + 1 : 1;
+    const { data } = await axios.get(`/api/products/${product._id}`);
+    if (data.availability < quantity) {
+      window.alert('Sorry. Machine is out of stock');
+      return;
+    }
     ctxDispatch({
       type: 'BOOKING_ADDED',
-      payload: { ...product, quantity: 1 },
+      payload: { ...product, quantity },
     });
   };
   return loading ? (
