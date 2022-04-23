@@ -1,7 +1,7 @@
 const data = {
   products: [
     {
-      _id: '1',
+      //_id: '1',
       name: 'Shaktiman 3776',
       slug: 'harvester1',
       category: 'For Rent Harvesters',
@@ -14,7 +14,7 @@ const data = {
       description: 'Reliable combine for rent',
     },
     {
-      _id: '2',
+      //_id: '2',
       name: 'Kartar 4000',
       slug: 'harvester2',
       category: 'For Rent Harvesters',
@@ -27,7 +27,7 @@ const data = {
       description: 'Reliable combine for rent',
     },
     {
-      _id: '3',
+      //_id: '3',
       name: 'Dashmesh 9100 maize',
       slug: 'harvester3',
       category: 'For Rent Harvesters',
@@ -40,7 +40,7 @@ const data = {
       description: 'Reliable combine for rent',
     },
     {
-      _id: '4',
+      //_id: '4',
       name: 'Preet 987',
       slug: 'harvester4',
       category: 'For Rent Harvesters',
