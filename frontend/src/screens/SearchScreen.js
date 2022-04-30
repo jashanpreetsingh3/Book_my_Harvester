@@ -28,6 +28,7 @@ const reducer = (state, action) => {
       };
     case 'FETCH_FAIL':
       return { ...state, loading: false, error: action.payload };
+
     default:
       return state;
   }
@@ -53,14 +54,17 @@ export const ratings = [
     name: '4stars & up',
     rating: 4,
   },
+
   {
     name: '3stars & up',
     rating: 3,
   },
+
   {
     name: '2stars & up',
     rating: 2,
   },
+
   {
     name: '1stars & up',
     rating: 1,
@@ -70,7 +74,7 @@ export const ratings = [
 export default function SearchScreen() {
   const navigate = useNavigate();
   const { search } = useLocation();
-  const sp = new URLSearchParams(search);
+  const sp = new URLSearchParams(search); // /search?category=Shirts
   const category = sp.get('category') || 'all';
   const query = sp.get('query') || 'all';
   const price = sp.get('price') || 'all';
@@ -120,10 +124,9 @@ export default function SearchScreen() {
     const filterQuery = filter.query || query;
     const filterRating = filter.rating || rating;
     const filterPrice = filter.price || price;
-    const filterOrder = filter.order || order;
-    return `/search?category=${filterCategory}&query=${filterQuery}&price=${filterPrice}&rating=${filterRating}&order=${filterOrder}&page=${filterPage}`;
+    const sortOrder = filter.order || order;
+    return `/search?category=${filterCategory}&query=${filterQuery}&price=${filterPrice}&rating=${filterRating}&order=${sortOrder}&page=${filterPage}`;
   };
-
   return (
     <div>
       <Helmet>
@@ -131,7 +134,7 @@ export default function SearchScreen() {
       </Helmet>
       <Row>
         <Col md={3}>
-          <h3>Category</h3>
+          <h3>Department</h3>
           <div>
             <ul>
               <li>
@@ -215,7 +218,7 @@ export default function SearchScreen() {
                     {query !== 'all' && ' : ' + query}
                     {category !== 'all' && ' : ' + category}
                     {price !== 'all' && ' : Price ' + price}
-                    {rating !== 'all' && ' : Rating ' + rating + ' : & up'}
+                    {rating !== 'all' && ' : Rating ' + rating + ' & up'}
                     {query !== 'all' ||
                     category !== 'all' ||
                     rating !== 'all' ||
@@ -237,7 +240,7 @@ export default function SearchScreen() {
                       navigate(getFilterUrl({ order: e.target.value }));
                     }}
                   >
-                    <option value="newest">Newest First</option>
+                    <option value="newest">Newest Arrivals</option>
                     <option value="lowest">Price: Low to High</option>
                     <option value="highest">Price: High to Low</option>
                     <option value="toprated">Avg. Customer Reviews</option>
@@ -245,8 +248,9 @@ export default function SearchScreen() {
                 </Col>
               </Row>
               {products.length === 0 && (
-                <MessageBox>No Products Found</MessageBox>
+                <MessageBox>No Product Found</MessageBox>
               )}
+
               <Row>
                 {products.map((product) => (
                   <Col sm={6} lg={4} className="mb-3" key={product._id}>
@@ -254,8 +258,9 @@ export default function SearchScreen() {
                   </Col>
                 ))}
               </Row>
+
               <div>
-                {[...Array(pages).key()].map((x) => (
+                {[...Array(pages).keys()].map((x) => (
                   <LinkContainer
                     key={x + 1}
                     className="mx-1"
