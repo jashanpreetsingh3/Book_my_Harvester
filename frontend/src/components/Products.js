@@ -34,7 +34,7 @@ function Product(props) {
         <Link to={`/product/${product.slug}`}>
           <Card.Title>{product.name}</Card.Title>
         </Link>
-        <Rating rating={product.rating} />
+        <Rating rating={product.rating} numReviews={product.numReviews} />
         <Card.Text>₹{product.price} / hr</Card.Text>
         {product.availability === 0 ? (
           <Button variant="light" disabled>
