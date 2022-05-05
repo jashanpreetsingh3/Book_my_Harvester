@@ -3,6 +3,7 @@ import axios from 'axios';
 import logger from 'use-reducer-logger';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Carousel from 'react-bootstrap/Carousel';
 import Product from '../components/Products';
 import { Helmet } from 'react-helmet-async';
 import LoadingBox from '../components/LoadingBox';
@@ -47,6 +48,44 @@ function HomeScreen() {
       <Helmet>
         <title>Book my Harvester</title>
       </Helmet>
+      <Carousel>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src="images/c1.jpg"
+            alt="First slide"
+            height="500px"
+          />
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src="images/c2.jpg"
+            alt="Second slide"
+            height="500px"
+          />
+
+          <Carousel.Caption>
+            <h3>Hassle Free Booking</h3>
+            <p>Book a harvester of your choice in a few easy steps.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src="images/c3.jpg"
+            alt="Third slide"
+            height="500px"
+          />
+
+          <Carousel.Caption>
+            <h3>Multiple Choices</h3>
+            <p>
+              Diiferent types of harvester availbale from various manufacturers.
+            </p>
+          </Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
       <h1>Featured Harvesters</h1>
       <div className="products">
         {loading ? (
