@@ -54,7 +54,7 @@ function HomeScreen() {
             className="d-block w-100"
             src="images/c1.jpg"
             alt="First slide"
-            height="500px"
+            height="550px"
           />
         </Carousel.Item>
         <Carousel.Item>
@@ -62,7 +62,7 @@ function HomeScreen() {
             className="d-block w-100"
             src="images/c2.jpg"
             alt="Second slide"
-            height="500px"
+            height="550px"
           />
 
           <Carousel.Caption>
@@ -75,7 +75,7 @@ function HomeScreen() {
             className="d-block w-100"
             src="images/c3.jpg"
             alt="Third slide"
-            height="500px"
+            height="550px"
           />
 
           <Carousel.Caption>
@@ -86,7 +86,9 @@ function HomeScreen() {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-      <h1>Featured Harvesters</h1>
+      <br></br>
+      <br></br>
+      <h1>Available Harvesters</h1>
       <div className="products">
         {loading ? (
           <LoadingBox />
