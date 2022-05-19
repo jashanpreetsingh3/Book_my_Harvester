@@ -33,6 +33,8 @@ import ProductEditScreen from './screens/ProductEditScreen';
 import OrderListScreen from './screens/OrderListScreen';
 import UserListScreen from './screens/UserListScreen';
 import UserEditScreen from './screens/UserEditScreen';
+import AboutScreen from './screens/AboutScreen';
+import TermsScreen from './screens/TermsScreen';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -246,6 +248,8 @@ function App() {
                 }
               ></Route>
               <Route path="/" element={<HomeScreen />} />
+              <Route path="/about" element={<AboutScreen />} />
+              <Route path="/terms" element={<TermsScreen />} />
             </Routes>
           </Container>
         </main>
@@ -270,16 +274,13 @@ function App() {
                 <a href="/">Home</a>
               </li>
               <li class="list-inline-item">
-                <a href="/">Services</a>
+                <a href="/search">Services</a>
               </li>
               <li class="list-inline-item">
-                <a href="/">About</a>
+                <a href="/about">About</a>
               </li>
               <li class="list-inline-item">
-                <a href="/">Terms</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="/">Privacy Policy</a>
+                <a href="/terms">Terms & Conditions</a>
               </li>
             </ul>
             <p class="copyright">Book my Harvester © 2022</p>
