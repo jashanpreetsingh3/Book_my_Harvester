@@ -35,7 +35,7 @@ function Product(props) {
           <Card.Title>{product.name}</Card.Title>
         </Link>
         <Rating rating={product.rating} numReviews={product.numReviews} />
-        <Card.Text>₹{product.price} / hr</Card.Text>
+        <Card.Text>₹{product.price} / acre</Card.Text>
         {product.availability === 0 ? (
           <Button variant="light" disabled>
             Not Available

@@ -110,7 +110,7 @@ function ProductScreen() {
                 <ListGroup.Item>
                   <Row>
                     <Col>Price:</Col>
-                    <Col>₹{product.price} / hr</Col>
+                    <Col>₹{product.price} / acre</Col>
                   </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>
